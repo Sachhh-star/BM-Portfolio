@@ -1,3 +1,5 @@
+import { FaGithub } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 function Hero() {
   return (
     <section id="home" className="hero">
@@ -25,10 +27,10 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            <FaGithub /> GitHub
           </a>
           <a className="btn" href="mailto:s.chaipotha@student.alfa-college.nl">
-            s.chaipotha@student.alfa-college.nl
+            <MdEmail /> s.chaipotha@student.alfa-college.nl
           </a>
         </div>
       </div>

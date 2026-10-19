@@ -62,12 +62,21 @@ nav a:hover {
 }
 
 .hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 16px;
+  grid-template-columns: repeat(2, max-content);
+  justify-items: start;
+}
+
+.hero-buttons .btn {
+  min-width: 200px;
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 16px 32px;
   border-radius: 99px;
   background-color: #ffffff;
@@ -79,6 +88,10 @@ nav a:hover {
 
 .btn:hover {
   background-color: #729bca;
+}
+
+.btn svg {
+  font-size: 22px;
 }
 
 .hero-photo {
@@ -409,6 +422,11 @@ section > h2 {
   .project-grid,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
   }
 }
 
