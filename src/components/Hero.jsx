@@ -33,13 +33,23 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-photo">
-        <img src="/beam-photo.jpg" alt="Photo of Beam" className="photo-real" />
-        <img
-          src="/beam-anime.jpg"
-          alt="Drawing of Beam"
-          className="photo-drawing"
-        />
+      <div className="badge">
+        <div className="badge-strap"></div>
+        <div className="badge-clip"></div>
+        <div className="badge-card">
+          <div className="hero-photo">
+            <img
+              src="/beam-photo.jpg"
+              alt="Photo of Beam"
+              className="photo-real"
+            />
+            <img
+              src="/beam-anime.jpg"
+              alt="Drawing of Beam"
+              className="photo-drawing"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

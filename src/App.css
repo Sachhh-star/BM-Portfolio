@@ -6,6 +6,8 @@ nav {
   background-color: #729bca;
   border-radius: 0 0 24px 24px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
 }
 
 nav ul {
@@ -131,8 +133,13 @@ section > h2 {
   display: flex;
   gap: 32px;
   padding: 32px;
-  background-color: #eef2f7;
-  border-radius: 32px;
+  background-color: rgba(238, 242, 247, 0.7);
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+  /* width: 100%;
+  max-width: 900px;
+  align-items: center;
+  margin: 0 auto; */
 }
 .about-photo {
   min-height: 340px;
@@ -157,6 +164,12 @@ section > h2 {
 
 .about-info p {
   margin: 0;
+}
+
+.about-info,
+.about-info a {
+  color: #13175c;
+  font-weight: bold;
 }
 
 .about-info .btn {
@@ -462,15 +475,6 @@ section > h2 {
   animation-duration: 11s;
 }
 
-/* ========== TEXT ANIMATION ========== */
-
-/* # STEP 1: the animation:
-   @keyframes fade-up {
-     from { opacity: 0; transform: translateY(30px); }
-     to   { opacity: 1; transform: translateY(0); }
-   }
-*/
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -497,8 +501,65 @@ section > h2 {
 .hero-buttons {
   animation-delay: 0.6s;
 }
+
+/* badge */
+.badge {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -80px;
+  transform-origin: top center;
+  animation: swing 4s ease-in-out infinite alternate;
+}
+
+.badge-strap {
+  width: 36px;
+  height: 120px;
+  background-color: #13175c;
+}
+
+.badge-clip {
+  width: 44px;
+  height: 44px;
+  margin-top: -10px;
+  margin-bottom: -22px;
+  border-radius: 50%;
+  background-color: #13175c;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-card {
+  padding: 28px;
+  border-radius: 48px;
+  background-color: rgba(238, 242, 247, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+@keyframes swing {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .badge {
+    margin-top: 0;
+    align-self: center;
+  }
+  .badge-strap,
+  .badge-clip {
+    display: none;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .circle, .hero-text > * {
+  .circle,
+  .hero-text > *,
+  .badge {
     animation: none;
   }
 }
