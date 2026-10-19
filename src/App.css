@@ -398,3 +398,107 @@ section > h2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* bg circles */
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #729bca, #c4d4e8);
+  opacity: 0.6;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.circle-1 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -120px;
+}
+.circle-2 {
+  width: 400px;
+  height: 400px;
+  top: 60px;
+  right: -150px;
+  animation-duration: 10s;
+}
+
+.circle-3 {
+  width: 300px;
+  height: 300px;
+  top: 45%;
+  left: -100px;
+  animation-duration: 12s;
+}
+
+.circle-4 {
+  width: 350px;
+  height: 350px;
+  top: 60%;
+  right: -120px;
+  animation-duration: 9s;
+}
+
+.circle-5 {
+  width: 300px;
+  height: 300px;
+  bottom: -120px;
+  left: 40%;
+  animation-duration: 11s;
+}
+
+/* ========== TEXT ANIMATION ========== */
+
+/* # STEP 1: the animation:
+   @keyframes fade-up {
+     from { opacity: 0; transform: translateY(30px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+*/
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text > * {
+  animation: fade-up 0.8s ease both;
+}
+
+.hero-text h2 {
+  animation-delay: 0.2s;
+}
+
+.hero-text p {
+  animation-delay: 0.4s;
+}
+
+.hero-buttons {
+  animation-delay: 0.6s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .circle, .hero-text > * {
+    animation: none;
+  }
+}
