@@ -9,15 +9,15 @@ function About() {
           <h4>Education</h4>
           <p>MBO4 Software Development, Alfa-college</p>
           <h4>Location</h4>
-          <p>Grootegast, Groningen</p>
-          <h4>School E-mail</h4>
+          <p>Boumaboulevard, Groningen</p>
+          {/* <h4>School E-mail</h4>
           <p>
             <a href="mailto:s.chaipotha@student.alfa-college.nl">
               s.chaipotha@student.alfa-college.nl
             </a>
           </p>
           <h4>Phone</h4>
-          <p>06-25448808</p>
+          <p>06-25448808</p> */}
           <a className="btn" href="/cv.pdf" download>
             Download Original CV (PDF)
           </a>
