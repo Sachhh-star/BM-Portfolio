@@ -1,10 +1,12 @@
-import { MdEmail } from "react-icons/md";
-import { FaMobile } from "react-icons/fa6";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function Contact() {
+  const [status, setStatus] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
+    setStatus("sending");
 
     const form = event.currentTarget;
 
@@ -17,11 +19,11 @@ function Contact() {
       )
       .then(
         () => {
-          alert("Thank you! Your message has been sent.");
+          (setStatus("success"));
           form.reset();
         },
         () => {
-          alert("Sorry, something went wrong. Please try again.");
+          (setStatus("error"));
         },
       );
   }
@@ -67,7 +69,19 @@ function Contact() {
             <label htmlFor="message">Message</label>
             <textarea name="message" id="message" rows="5" required></textarea>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={status === "sending"}>
+            {status === "sending" ? "Sending..." : "Submit"}
+          </button>
+          {status === "success" && (
+            <p className="form-message success">
+              Thank you! Your message has been sent.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="form-message error">
+              Sorry, something went wrong. Please try again.
+            </p>
+          )}
         </form>
       </div>
     </section>

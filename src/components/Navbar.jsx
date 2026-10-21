@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 
 function Navbar() {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 50);
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav>
+    <nav className={isScrolled ? "scrolled" : ""}>
       <a href="#home">BM</a>
       <button
         className="menu-button"

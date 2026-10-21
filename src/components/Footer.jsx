@@ -1,3 +1,6 @@
+import { FaGithub } from "react-icons/fa6";
+import { FaArrowUp } from "react-icons/fa6";
+
 function Footer() {
   return (
     <footer className="footer">
@@ -26,18 +29,29 @@ function Footer() {
             </li>
           </ul>
         </div>
+
         <div className="footer-column">
-          <h3>Contact</h3>
-          <p>
-            Email:{" "}
-            <a href="mailto:s.chaipotha@student.alfa-college.nl">
-              s.chaipotha@student.alfa-college.nl
-            </a>
-          </p>
-          <p>Phone: 06-25448808</p>
+          <h3>Find me</h3>
+          <a
+            className="footer-social"
+            href="https://github.com/Sachhh-star"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub /> GitHub
+          </a>
         </div>
       </div>
-      <p className="copyright">© {new Date().getFullYear()} Beam Chaipotha.</p>
+
+      <div className="footer-bottom">
+        <p className="copyright">
+          © {new Date().getFullYear()} Beam Chaipotha.
+        </p>
+
+        <a href="#home" className="back-to-top">
+          <FaArrowUp /> Back to top
+        </a>
+      </div>
     </footer>
   );
 }
