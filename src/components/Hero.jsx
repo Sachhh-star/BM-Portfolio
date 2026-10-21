@@ -29,9 +29,6 @@ function Hero() {
           >
             <FaGithub /> GitHub
           </a>
-          {/* <a className="btn" href="mailto:s.chaipotha@student.alfa-college.nl">
-            <MdEmail /> s.chaipotha@student.alfa-college.nl
-          </a> */}
         </div>
       </div>
 

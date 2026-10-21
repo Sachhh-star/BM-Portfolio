@@ -153,11 +153,11 @@ section > h2 {
   gap: 32px;
   padding: 32px;
   background-color: rgba(238, 242, 247, 0.7);
-  border-radius: 2px;
+  border-radius: 32px;
   backdrop-filter: blur(8px);
+  align-items: center;
   /* width: 100%;
   max-width: 900px;
-  align-items: center;
   margin: 0 auto; */
 }
 .about-photo {
@@ -181,10 +181,6 @@ section > h2 {
   margin: 16px 0 4px;
 }
 
-.about-info p {
-  margin: 0;
-}
-
 .about-info,
 .about-info a {
   color: #13175c;
@@ -194,6 +190,39 @@ section > h2 {
 .about-info .btn {
   display: inline-block;
   margin-top: 24px;
+}
+
+.about-info .about-text {
+  margin: 12px 0 24px;
+  font-weight: normal;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-item svg {
+  flex-shrink: 0;
+  font-size: 28px;
+  color: #729bca;
+}
+
+.info-item h4 {
+  margin: 0 0 2px;
 }
 
 /* skill */
@@ -497,15 +526,21 @@ section > h2 {
   border-radius: 50%;
   background: linear-gradient(135deg, #729bca, #c4d4e8);
   opacity: 0.6;
-  animation: float 8s ease-in-out infinite alternate;
+  animation: float 16s ease-in-out infinite;
 }
 
 @keyframes float {
-  from {
-    transform: translateY(0);
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-  to {
-    transform: translateY(40px);
+  33% {
+    transform: translate(30px, 40px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
 
@@ -628,10 +663,30 @@ section > h2 {
     display: none;
   }
 }
+
+section:not(.hero) {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .circle,
   .hero-text > *,
   .badge {
     animation: none;
+  }
+
+  section:not(.hero) {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

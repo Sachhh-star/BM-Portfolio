@@ -37,22 +37,6 @@ function Contact() {
           Do you have a question or want to work together? Feel free to reach
           out to me.
         </p>
-        {/* <div className="email-box">
-          <MdEmail />
-          <span>
-            <a
-              className="email"
-              href="mailto:s.chaipotha@student.alfa-college.nl"
-            >
-              s.chaipotha@student.alfa-college.nl
-            </a>
-          </span>
-        </div> */}
-        {/* <div className="telefoon-box">
-          <p>
-            <FaMobile /> 06-25448808
-          </p>
-        </div> */}
       </div>
 
       <div className="contact-box">
