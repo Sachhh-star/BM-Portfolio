@@ -30,6 +30,7 @@ function Skills() {
               <br />
               <MdStar />
               <MdStar />
+              <MdStar />
             </li>
 
             <li className="languages-card">
