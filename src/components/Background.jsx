@@ -1,14 +1,20 @@
 function Background() {
   return (
     <div className="background" aria-hidden="true">
-      <div className="circle circle-1"></div>
-      <div className="circle circle-2"></div>
-      <div className="circle circle-3"></div>
-      <div className="circle circle-4"></div>
-      <div className="circle circle-5"></div>
+      <div className="night">
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+      </div>
     </div>
   );
 }
 
 export default Background;
-
