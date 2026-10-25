@@ -259,9 +259,11 @@ section > h2 {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s;
+  border-radius: 24px;
 }
 
-.scene-card:hover .shine {
+.scene-card:hover .shine,
+.contact-cv:hover .shine {
   opacity: 1;
 }
 
@@ -296,7 +298,8 @@ section > h2 {
   .shine {
     display: none;
   }
-  .scene-card {
+  .scene-card,
+  .contact-cv {
     transform: none !important;
   }
 }
@@ -465,92 +468,39 @@ section > h2 {
   justify-self: start;
 }
 
-.email-box,
-.telefoon-box {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 24px;
-  font-weight: bold;
-}
-
-.email-box a {
-  text-decoration: none;
-  color: #111111;
-}
-
-.email-box a:hover {
-  text-decoration: underline;
-}
-
-.contact-card svg {
+.cv-card h3 {
+  margin: 6px 0 8px;
   font-size: 28px;
-}
-
-.contact-box {
-  padding: 32px;
-  background-color: #ffffff;
-  color: #111111;
-  border-radius: 32px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.contact-input {
-  margin-bottom: 20px;
-}
-
-.contact-input label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.contact-input input,
-.contact-input textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #cccccc;
-  border-radius: 16px;
-  background-color: #eeeeee;
-  font: inherit;
-}
-
-.contact-box button {
-  padding: 10px 32px;
-  border: none;
-  border-radius: 99px;
-  background-color: #13175c;
   color: #ffffff;
-  font-weight: bold;
+}
+
+.cv-card .cv-text {
+  margin: 0 0 24px;
   font-size: 16px;
-  cursor: pointer;
+  letter-spacing: normal;
+  color: #e6ecf5;
 }
 
-.contact-box button:hover {
-  background-color: #729bca;
+.cv-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.contact-box button:disabled {
-  opacity: 0.6;
-  cursor: wait;
+.contact-cv {
+  position: relative;
+  transition: transform 0.15s ease-out;
 }
 
-.form-message {
-  margin: 16px;
-  padding: 12px 16px;
-  border-radius: 16px;
-  font-weight: bold;
-  animation: fade-up 0.4s ease both;
+.tag-pdf {
+  top: -14px;
+  right: 24px;
 }
 
-.form-message.success {
-  background-color: #e3f4e8;
-  color: #1e6b3a;
-}
-
-.form-message.error {
-  background-color: #fde8e8;
-  color: #a12626;
+.tag-talk {
+  bottom: -14px;
+  left: 24px;
+  animation-delay: 1s;
 }
 
 .footer {
