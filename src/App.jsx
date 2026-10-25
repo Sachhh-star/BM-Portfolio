@@ -7,9 +7,11 @@ import Project from "./components/Project.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import Background from "./components/Background.jsx";
-import { useEffect } from "react";
+import StartPage from "./components/Startpage.jsx";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [showPortfolio, setShowPortfolio] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section:not(.hero)");
@@ -28,18 +30,24 @@ function App() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [showPortfolio]);
 
   return (
     <>
       <Background />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Project />
-      <Contact />
-      <Footer />
+      {showPortfolio ? (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Skills />
+          <Project />
+          <Contact />
+          <Footer />
+        </>
+      ) : (
+        <StartPage onEnter={() => setShowPortfolio(true)} />
+      )}
     </>
   );
 }
